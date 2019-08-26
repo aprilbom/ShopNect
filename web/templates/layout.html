@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Material Design Bootstrap</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="{{url_for('static', filename='css/bootstrap.css')}}" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="{{url_for('static', filename='css/mdb.min.css')}}" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="{{url_for('static', filename='css/style.min.css')}}" rel="stylesheet">
+  <style type="text/css">
+    /* Necessary for full page carousel*/
+    html,
+    body,
+    header,
+    .view {
+      height: 100%;
+    }
+
+    /* Carousel*/
+    .carousel,
+    .carousel-item,
+    .carousel-item.active {
+      height: 100%;
+    }
+    .carousel-inner {
+      height: 100%;
+    }
+
+    @media (min-width: 800px) and (max-width: 850px) {
+      .navbar:not(.top-nav-collapse) {
+          background: #1C2331!important;
+      }
+  }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+    <div class="container">
+
+      <!-- Brand -->
+      <a class="navbar-brand" href="#">
+        <strong>BBZ</strong>
+      </a>
+
+      <!-- Collapse -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Links -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <!-- Left -->
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://mdbootstrap.com/docs/jquery/" target="_blank">About ShowNect</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://mdbootstrap.com/docs/jquery/getting-started/download/" target="_blank">Brands List</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://mdbootstrap.com/education/bootstrap/" target="_blank">Request Brands</a>
+          </li>
+        </ul>
+
+        <!-- Right -->
+        <ul class="navbar-nav nav-flex-icons">
+          <li class="nav-item">
+            <a href="https://www.facebook.com/mdbootstrap" class="nav-link" target="_blank">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="https://twitter.com/MDBootstrap" class="nav-link" target="_blank">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="https://github.com/aprilbom/Tensorflow-Web" class="nav-link border border-light rounded waves-effect waves-light"
+              target="_blank">
+              <i class="fab fa-github mr-2"></i>BBZ GitHub
+            </a>
+          </li>
+        </ul>
+
+      </div>
+
+    </div>
+  </nav>
+  <!-- Navbar -->
+  <!-- data-ride="carousel" -->
+  <!--Carousel Wrapper-->
+  <div id="carousel-example-1z" class="carousel slide carousel-fade">
+    <!--Slides-->
+    <div class="carousel-inner" role="listbox">
+
+      <!--First slide-->
+      <div class="carousel-item active">
+        <div class="view">
+
+          <!--Video source-->
+          <style>
+            body {
+              background: url(https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80) no-repeat center center fixed; 
+              -webkit-background-size: cover;
+              -moz-background-size: cover;
+              -o-background-size: cover;
+              background-size: cover;
+            }
+          </style>>
+
+          <!-- Mask & flexbox options-->
+          <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+            <form action="/" method="post" enctype="multipart/form-data">
+              <!-- Content -->
+              <div class="text-center white-text mx-5 wow fadeIn">
+                <h1 class="mb-4">
+                  <strong>Find the shopping mall you want: ShowNect</strong>
+                </h1>
+
+                <p>
+                  <strong>Best & free guide of your shopping</strong>
+                </p>
+
+                <p class="mb-4 d-none d-md-block">
+                  <strong>The most comfortable link for various shopping mall. Loved by over 500,000 users.</strong>
+                </p>
+
+                <a class="btn btn-outline-white btn-lg">
+                  <div class="file_input">
+                    <label>
+                      <i class="fas fa-folder-open"></i>
+                      <input type="file" accept="image/*" name = "file" onchange="javascript:document.getElementById('file_route').value=this.value">
+                    </label>
+                    <input type="text" readonly="readonly" title="File Route" id="file_route">
+                  </div>
+                  <button type="submit" class="btn border border-light rounded waves-effect waves-light">
+                    <i class="fas fa-search"></i>
+                  </button>
+                </a>
+              </div>
+              <!-- Content -->
+            </form>
+          </div>
+          <!-- Mask & flexbox options-->
+
+        </div>
+      </div>
+      <!--/First slide-->
+    </div>
+    <!--/.Slides-->
+  </div>
+  <!--/.Carousel Wrapper-->
+
+  {% if answer%}
+  <!--Main layout-->
+  <main>
+    <div class="container">
+      <!--Section: Main info-->
+      <section class="mt-5 wow fadeIn">
+
+        <!--Grid row-->
+        <div class="row">
+          <!--Grid column-->
+          <div class="col-md-6 mb-4 card">
+
+            <!-- Main heading -->
+            <h3 class="h3 mb-3">Your Results:</h3>
+            <p>The Brand is (
+              <strong>{{ answer }}</strong> )!</p>
+            <p>Thank you for using our service.</p>
+            <!-- Main heading -->
+
+            <p>
+              <strong>If you want to link to the Shopping Mall, Click below button. </strong>
+            </p>
+
+            {% if (answer == 'tommy hilfiger1') or (answer == 'tommy hilfiger2') %}
+              <a target="_blank" href="http://www.hfashionmall.com/sfmweb/display/display.do?screenNumber=1104&categoryNumber=10500&utm_source=naver&utm_medium=display&utm_campaign=pc_brand&utm_content=th_main" class="btn btn-grey btn-md" class="btn btn-grey btn-md">Shop now
+                <i class="fas fa-shopping-cart ml-1"></i>
+              </a>
+            {% elif (answer == 'celine1') or (answer == 'celine2') %}
+              <a target="_blank" href="https://www.celine.com/en-int/home" class="btn btn-grey btn-md" class="btn btn-grey btn-md">Shop now
+                <i class="fas fa-shopping-cart ml-1"></i>
+              </a>
+            {% elif answer == 'acne' %}
+              <a target="_blank" href="https://www.acnestudios.com/kr/en/home" class="btn btn-grey btn-md" class="btn btn-grey btn-md">Shop now
+                <i class="fas fa-shopping-cart ml-1"></i>
+              </a>
+            {% elif answer == 'the north face' %}
+              <a target="_blank" href="https://www.thenorthfacekorea.co.kr/" class="btn btn-grey btn-md" class="btn btn-grey btn-md">Shop now
+                <i class="fas fa-shopping-cart ml-1"></i>
+              </a>
+            {% elif (answer == 'nike1') or (answer == 'nike2') %}
+              <a target="_blank" href="https://www.nike.com/kr/ko_kr/" class="btn btn-grey btn-md" class="btn btn-grey btn-md">Shop now
+                <i class="fas fa-shopping-cart ml-1"></i>
+              </a>
+            {% elif (answer == 'cath kidston1') or (answer == 'cath kidston2') %}
+              <a target="_blank" href="http://www.cathkidstonkorea.co.kr/main/index.asp" class="btn btn-grey btn-md">Shop now
+                <i class="fas fa-shopping-cart ml-1"></i>
+              </a>
+            {% elif (answer == 'ysl1') or (answer == 'ysl2') %}
+              <a target="_blank" href="https://www.ysl.com/kr" class="btn btn-grey btn-md">Shop now
+                <i class="fas fa-shopping-cart ml-1"></i>
+              </a>
+            {% elif (answer == 'adidas1') or (answer == 'adidas2') %}
+              <a target="_blank" href="https://shop.adidas.co.kr/adiMain.action?NFN_ST=Y" class="btn btn-grey btn-md">Shop now
+                <i class="fas fa-shopping-cart ml-1"></i>
+              </a>
+            {% elif answer == 'champion' %}
+              <a target="_blank" href="http://joes-shop.championusa.kr/" class="btn btn-grey btn-md">Shop now
+                <i class="fas fa-shopping-cart ml-1"></i>
+              </a>
+            {% elif answer == 'stussy' %}
+              <a target="_blank" href="https://www.stussy.co.kr/" class="btn btn-grey btn-md">Shop now
+                <i class="fas fa-shopping-cart ml-1"></i>
+              </a>
+            {% elif (answer == 'muji1') or (answer == 'muji2') %}
+              <a target="_blank" href="http://www.mujikorea.net/display/displayShop.lecs?storeNo=1&siteNo=13013&displayNo=MJ1A84&displayMallNo=MJ1" class="btn btn-grey btn-md">Shop now
+                <i class="fas fa-shopping-cart ml-1"></i>
+              </a>
+            {% elif answer == 'prada' %}
+              <a target="_blank" href="http://www.prada.com/en.html?cc=AP" class="btn btn-grey btn-md">Shop now
+                <i class="fas fa-shopping-cart ml-1"></i>
+              </a>
+            {% elif answer == 'thom browne' %}
+              <a target="_blank" href="http://www.thombrowne.co.kr/public/display/main/view" class="btn btn-grey btn-md">Shop now
+                <i class="fas fa-shopping-cart ml-1"></i>
+              </a>
+            {% elif answer == 'toms' %}
+              <a target="_blank" href="https://www.toms.com/" class="btn btn-grey btn-md">Shop now
+                <i class="fas fa-shopping-cart ml-1"></i>
+              </a>
+            {% else %}
+              <a target="_blank" href="#" class="btn btn-grey btn-md">Enter Another
+              <i class="fas fa-shopping-cart ml-1"></i>
+              </a>
+            {% endif %}
+          </div>
+          <!--Grid column-->
+
+        </div>
+        <!--Grid row-->
+      </section>
+      <!--Section: Main info-->
+    </div>
+  </main>
+  <!--Main layout-->
+  {% endif %}
+
+  <!--Footer-->
+  <footer class="page-footer text-center font-small mt-4 wow fadeIn">
+
+    <!--Call to action-->
+    <div class="pt-4">
+      <a class="btn btn-outline-white" href="https://mdbootstrap.com/docs/jquery/getting-started/download/" target="_blank" role="button">Download Sourcecode
+        <i class="fas fa-download ml-2"></i>
+      </a>
+      <a class="btn btn-outline-white" href="https://mdbootstrap.com/education/bootstrap/" target="_blank" role="button">leave comments
+        <i class="fas fa-graduation-cap ml-2"></i>
+      </a>
+    </div>
+    <!--/.Call to action-->
+
+    <hr class="my-4">
+
+    <!-- Social icons -->
+    <div class="pb-4">
+      <a href="https://www.facebook.com/mdbootstrap" target="_blank">
+        <i class="fab fa-facebook-f mr-3"></i>
+      </a>
+
+      <a href="https://twitter.com/MDBootstrap" target="_blank">
+        <i class="fab fa-instagram mr-3"></i>
+      </a>
+
+      <a href="https://www.youtube.com/watch?v=7MUISDJ5ZZ4" target="_blank">
+        <i class="fab fa-youtube mr-3"></i>
+      </a>
+
+      <a href="https://plus.google.com/u/0/b/107863090883699620484" target="_blank">
+        <i class="fab fa-google-plus-g mr-3"></i>
+      </a>
+
+      <a href="https://dribbble.com/mdbootstrap" target="_blank">
+        <i class="fab fa-dribbble mr-3"></i>
+      </a>
+
+      <a href="https://pinterest.com/mdbootstrap" target="_blank">
+        <i class="fab fa-pinterest mr-3"></i>
+      </a>
+
+      <a href="https://github.com/mdbootstrap/bootstrap-material-design" target="_blank">
+        <i class="fab fa-github mr-3"></i>
+      </a>
+
+      <a href="http://codepen.io/mdbootstrap/" target="_blank">
+        <i class="fab fa-codepen mr-3"></i>
+      </a>
+    </div>
+    <!-- Social icons -->
+
+    <!--Copyright-->
+    <div class="footer-copyright py-3">
+      © 2019 Copyright:
+      <a href="https://mdbootstrap.com/education/bootstrap/" target="_blank"> BBZ downloads </a>
+    </div>
+    <!--/.Copyright-->
+
+  </footer>
+  <!--/.Footer-->
+
+  <!-- SCRIPTS -->
+  <!-- JQuery -->
+  <script type="text/javascript" src="{{url_for('static', filename='js/jquery-3.3.1.min.js')}}"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="{{url_for('static', filename='js/popper.min.js')}}"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="{{url_for('static', filename='js/mdb.min.js')}}"></script>
+  <!-- Initializations -->
+  <script type="text/javascript">
+    // Animations initializations
+    new WOW().init();
+  </script>
+
+  <div class="container">
+      {% block content %}
+      {% endblock %}
+  </div>
+</body>
+
+</html>
